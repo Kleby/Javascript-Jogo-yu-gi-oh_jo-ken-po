@@ -1,0 +1,197 @@
+body{
+    cursor: url("/src/assets/cursor/cursor.cur"), pointer;
+}
+
+button,
+img:hover,
+button:hover{
+    cursor: url("/src/assets/cursor/yamiyugicursorGLOW.png") ,pointer;
+}
+
+.bg-video {
+    position: absolute;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.bg-video::after {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg,
+            #000000fa 0%,
+            #000000da 50%,
+            #000000fa 100%);
+}
+
+.bg-video .video-yugi {
+    height: 100%;
+}
+
+.container {
+    z-index: 2;
+    height: 100vh;
+    display: flex;
+}
+
+.container__left {
+    width: 35%;
+    min-width: 20rem;
+    position: relative;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    gap: 10rem;
+}
+
+.container__right {
+    width: 65%;
+}
+
+.score_box {
+    padding: 1.75rem;
+    text-transform: uppercase;
+    margin-top: 1.25rem;
+}
+
+
+.no-select-card {
+    background-color: #ffd800;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    padding: 1rem .5rem 1.2rem;
+}
+
+.content-void {
+    background-color: #000;
+    box-shadow: 0 0 2px 8px #000 inset, 0 0 4px 9px #fff inset;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.card-selected__content {
+    width: 220px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.menu_avatar {
+    width: 220px;
+    height: 295px;
+    position: relative;
+}
+
+.menu_avatar .selected-card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    display: block;
+}
+
+.frame {
+    background-color: #ddd;
+    box-shadow: inset 0 0 4px 3px #000;
+    border-radius: 5px;
+}
+
+.card_details {
+    padding: 1rem;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ff9900;
+
+}
+
+#cardName {
+    font-size: .8rem;
+    margin-bottom: .725rem;
+}
+
+#cardType {
+    color: #e9e9e9;
+    padding: .3rem .7rem;
+}
+
+.card-box__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: .3rem;
+}
+
+.card-versus__container {
+    flex-direction: column;
+    padding-top: .1rem;
+    justify-content: center;
+    /* height: 300px; */
+}
+
+.versus-top,
+.versus-bottom {
+    justify-content: center;
+}
+
+.versus-bottom {
+    margin-top: 2rem;
+}
+
+#nextDuel {
+    visibility: hidden;
+}
+
+.card-box {
+    height: 9.5rem;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.versus-millenium{
+    height: 100px;
+    margin: 0 1.25rem;
+}
+
+
+.card-infield>img{
+    display: none;
+}
+
+.card-infield {
+    /* height: 11.2rem; */
+    height: 100%;
+    width: 8rem;
+    height: 11.25rem;
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+
+.container__left,
+.card-box,
+.card_details,
+.card-versus__container,
+.versus-top,
+.versus-bottom {
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    transition: transform 200ms ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.2);
+}
