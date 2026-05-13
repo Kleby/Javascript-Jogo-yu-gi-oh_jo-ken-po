@@ -1,3 +1,4 @@
+const pathImages = "./src/assets/icons";
 const CardData = [
   {
     id: 0,

@@ -1,7 +1,7 @@
 const state= States;
 
  const playerSide = PlayerSide;
-const pathImages = "./src/assets/icons";
+
 
 const cardData = CardData;
 
