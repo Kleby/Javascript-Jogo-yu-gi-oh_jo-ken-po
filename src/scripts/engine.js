@@ -1,57 +1,9 @@
-state = {
-  score: {
-    playerScore: 0,
-    computerScore: 0,
-    scoreBox: document.getElementById("scorePoints"),
-  },
-  cardSprites: {
-    selected: document.getElementById("selectedImage"),
-    avatar: "",
-    name: document.getElementById("cardName"),
-    type: document.getElementById("cardType"),
-  },
-  fieldCards: {
-    player: document.getElementById("playerFieldCard"),
-    computer: document.getElementById("computerFieldCard"),
-  },
-  actions: {
-    button: document.getElementById("nextDuel"),
-  },
-};
+const state= States;
 
-const playerSide = {
-  player: "playerCards",
-  computer: "computerCards",
-};
-
+ const playerSide = PlayerSide;
 const pathImages = "./src/assets/icons";
 
-const cardData = [
-  {
-    id: 0,
-    name: "Blue Eyes White Dragon",
-    type: "Paper",
-    src: `${pathImages}/dragon.png`,
-    WinOf: [1],
-    loseOf: [2],
-  },
-  {
-    id: 1,
-    name: "Dark Magician",
-    type: "Rock",
-    src: `${pathImages}/magician.png`,
-    WinOf: [2],
-    loseOf: [0],
-  },
-  {
-    id: 2,
-    name: "Exodia",
-    type: "Scissors",
-    src: `${pathImages}/exodia.png`,
-    WinOf: [0],
-    loseOf: [1],
-  },
-];
+const cardData = CardData;
 
 async function playAudio(status) {
   if(status=== "draw") return;
@@ -78,11 +30,6 @@ async function getRandomCardId() {
   return cardData[randomIndex].id;
 }
 
-async function drawSelectCard(index) {
-  state.cardSprites.avatar.src = cardData[index].src;
-  state.cardSprites.name.innerText = cardData[index].name;
-  state.cardSprites.type.innerText = `${cardData[index].type}`;
-}
 
 async function removerAllCardsImage(elementId) {
   const card = document.getElementById(elementId);
@@ -109,10 +56,6 @@ async function checkDuelResults(playerId, computerId) {
   return duelResults.toUpperCase();
 }
 
-async function drawButton(text = "") {
-  state.actions.button.innerText = text;
-  state.actions.button.style.visibility="visible";
-}
 
 async function updateScore() {
   state.score.scoreBox.innerText = `Win: ${state.score.playerScore} | Lose: ${state.score.computerScore}`;
@@ -158,13 +101,6 @@ async function createCardImage(idCard, fieldSide) {
   return cardImage;
 }
 
-async function drawCards(cardNumbers, fieldSide) {
-  for (let i = 0; i < cardNumbers; i++) {
-    const randomIdCard = await getRandomCardId();
-    const cardImage = await createCardImage(randomIdCard, fieldSide);
-    document.getElementById(fieldSide).appendChild(cardImage);
-  }
-}
 
 async function createSelectedImage(){
   const img = document.createElement("img");
