@@ -1,4 +1,7 @@
 async function drawSelectCard(index) {
+  console.log(index);
+    console.log("drawSelect");
+    
   state.cardSprites.avatar.src = cardData[index].src;
   state.cardSprites.name.innerText = cardData[index].name;
   state.cardSprites.type.innerText = `${cardData[index].type}`;

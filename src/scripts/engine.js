@@ -2,7 +2,6 @@ const state= States;
 
  const playerSide = PlayerSide;
 
-
 const cardData = CardData;
 
 async function playAudio(status) {
