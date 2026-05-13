@@ -19,3 +19,9 @@ async function drawCards(cardNumbers, fieldSide) {
     document.getElementById(fieldSide).appendChild(cardImage);
   }
 }
+
+async function getRandomCardId() {
+  const randomIndex = Math.floor(Math.random() * cardData.length);
+  return cardData[randomIndex].id;
+}
+

@@ -1,13 +1,9 @@
-document.addEventListener("DOMContentLoaded", ()=>{
 
-  
   const state= States;
   
   const playerSide = PlayerSide;
   
   const cardData = CardData;
-  console.log(CardData)
-  
   async function playAudio(status) {
   if(status=== "draw") return;
   const audio = new Audio(`./src/assets/audios/${status}.wav`);
@@ -26,11 +22,6 @@ async function resetDuel() {
   
   
   init();
-}
-
-async function getRandomCardId() {
-  const randomIndex = Math.floor(Math.random() * cardData.length);
-  return cardData[randomIndex].id;
 }
 
 
@@ -124,5 +115,3 @@ function init() {
 
 
 init();
-
-})
