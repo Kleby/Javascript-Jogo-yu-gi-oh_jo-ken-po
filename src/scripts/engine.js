@@ -24,7 +24,7 @@ const playerSide = {
   computer: "computerCards",
 };
 
-const pathImages = "/src/assets/icons";
+const pathImages = "./src/assets/icons";
 
 const cardData = [
   {
@@ -55,7 +55,7 @@ const cardData = [
 
 async function playAudio(status) {
   if(status=== "draw") return;
-  const audio = new Audio(`/src/assets/audios/${status}.wav`);
+  const audio = new Audio(`./src/assets/audios/${status}.wav`);
   audio.volume = 0.5;
   audio.play();
 }
@@ -139,7 +139,7 @@ async function setCardsField(idCard) {
 async function createCardImage(idCard, fieldSide) {
   const cardImage = document.createElement("img");
   cardImage.setAttribute("height", "100px");
-  cardImage.setAttribute("src", "/src/assets/icons/card-back.png");
+  cardImage.setAttribute("src", "./src/assets/icons/card-back.png");
   cardImage.setAttribute("data-id", idCard);
   cardImage.setAttribute("id", idCard);
 
